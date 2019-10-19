@@ -5,4 +5,6 @@
     <string name="button2">Button</string>
     <string name="_1">1</string>
     <string name="_0">0</string>
+    <string name="click_on_the_bigger_number">Click on the bigger number:</string>
+    <string name="_">_</string>
 </resources>

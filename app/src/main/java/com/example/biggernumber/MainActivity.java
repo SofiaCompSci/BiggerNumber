@@ -1,5 +1,6 @@
 package com.example.biggernumber;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -55,24 +56,46 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void on_click(View view){
+    public boolean buttonManager(boolean b){
         TextView button1 = this.findViewById(R.id.button1);
         TextView button2 = this.findViewById(R.id.button2);
         int b1read = Integer.parseInt(button1.getText().toString());
         int b2read = Integer.parseInt(button2.getText().toString());
-        boolean b1IsGreater;
-        if (b1read>b2read){
-            b1IsGreater = true;
+        if (b) {
+            return b1read > b2read;
         }
         else{
-            b1IsGreater = false;
+            Random r = new Random();
+            Random s = new Random();
+            String number1 = Integer.toString(r.nextInt(10)-5);
+            String number2 = Integer.toString(s.nextInt(10)-5);
+            button1.setText(number1);
+            button2.setText(number2);
+            return true;
         }
-
-        Random r = new Random();
-        Random s = new Random();
-        String number1 = Integer.toString(r.nextInt());
-        String number2 = Integer.toString(s.nextInt());
-        button1.setText(number1);
-        button2.setText(number2);
+    }
+    @SuppressLint("SetTextI18n")
+    public void on_b1_click(View view){
+        TextView ans = this.findViewById(R.id.Answer);
+        boolean B1IsBigger = buttonManager(true);
+        if (B1IsBigger){
+            ans.setText("Congratulations!");
+        }
+        else{
+            ans.setText("Incorrect");
+        }
+        buttonManager(false);
+    }
+    @SuppressLint("SetTextI18n")
+    public void on_b2_click(View view){
+        TextView ans = this.findViewById(R.id.Answer);
+        boolean B1IsBigger = buttonManager(true);
+        if (!B1IsBigger){
+            ans.setText("Congratulations!");
+        }
+        else{
+            ans.setText("Incorrect");
+        }
+        buttonManager(false);
     }
 }
