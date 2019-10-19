@@ -11,6 +11,9 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,5 +54,25 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void on_click(View view){
+        TextView button1 = this.findViewById(R.id.button1);
+        TextView button2 = this.findViewById(R.id.button2);
+        int b1read = Integer.parseInt(button1.getText().toString());
+        int b2read = Integer.parseInt(button2.getText().toString());
+        boolean b1IsGreater;
+        if (b1read>b2read){
+            b1IsGreater = true;
+        }
+        else{
+            b1IsGreater = false;
+        }
+
+        Random r = new Random();
+        Random s = new Random();
+        String number1 = Integer.toString(r.nextInt());
+        String number2 = Integer.toString(s.nextInt());
+        button1.setText(number1);
+        button2.setText(number2);
     }
 }

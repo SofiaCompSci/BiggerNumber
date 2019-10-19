@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Bigger Number</string>
     <string name="action_settings">Settings</string>
+    <string name="button1">Button</string>
+    <string name="button2">Button</string>
+    <string name="_1">1</string>
+    <string name="_0">0</string>
 </resources>
