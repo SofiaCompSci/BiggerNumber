@@ -77,9 +77,13 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void on_b1_click(View view){
         TextView ans = this.findViewById(R.id.Answer);
+        TextView points = this.findViewById(R.id.pointsNum);
+        int pValue = Integer.parseInt(points.getText().toString());
         boolean B1IsBigger = buttonManager(true);
         if (B1IsBigger){
             ans.setText("Congratulations!");
+            pValue ++;
+            points.setText(Integer.toString(pValue));
         }
         else{
             ans.setText("Incorrect");
@@ -89,9 +93,13 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void on_b2_click(View view){
         TextView ans = this.findViewById(R.id.Answer);
+        TextView points = this.findViewById(R.id.pointsNum);
+        int pValue = Integer.parseInt(points.getText().toString());
         boolean B1IsBigger = buttonManager(true);
         if (!B1IsBigger){
             ans.setText("Congratulations!");
+            pValue ++;
+            points.setText(Integer.toString(pValue));
         }
         else{
             ans.setText("Incorrect");
